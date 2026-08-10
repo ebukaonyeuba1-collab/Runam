@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0a1e31;
+  --green: #00b553;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #eef1f4;
+  color: var(--navy);
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Money and distances line up in columns. Tabular figures do the work. */
+.tnum {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.display {
+  font-family: "Archivo", system-ui, sans-serif;
+  font-stretch: 112%;
+  letter-spacing: -0.02em;
+}
+
+/* The receipt: the one place the interface is allowed to look like paper. */
+.receipt {
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 27px,
+      rgba(10, 30, 49, 0.05) 27px 28px
+    );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
